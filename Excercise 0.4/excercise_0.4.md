@@ -40,11 +40,15 @@ activate Server
 Server->>Browser: Javascript file, status code 200
 deactivate Server
 
+Note left of Browser: Browser fetches the json data after script loads
+
 activate Browser
 Browser->>Server: GET request to https://studies.cs.helsinki.fi/exampleapp/data.json
 deactivate Browser
 activate Server
 Server->>Browser: Json file, status code 200
 deactivate Server
+
+Note left of Browser: Browser invokes the callback function to render the notes from json data
 
 ```
